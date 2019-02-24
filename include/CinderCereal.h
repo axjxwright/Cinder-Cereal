@@ -76,8 +76,8 @@ template<class Archive> void serialize( Archive & archive, ci::dmat4 &m ) { arch
 
 // glm quaternions serialization
 #if CINDER_CEREAL_NVP
-template<class Archive> void serialize( Archive & archive, ci::quat &q ) { archive( cereal::make_nvp( "x", q.x ), cereal::make_nvp( "y", q.y ), cereal::make_nvp( "z", q.z ), cereal::make_nvp( "z", q.w ) ); }
-template<class Archive> void serialize( Archive & archive, ci::dquat &q ) { archive( cereal::make_nvp( "x", q.x ), cereal::make_nvp( "y", q.y ), cereal::make_nvp( "z", q.z ), cereal::make_nvp( "z", q.w ) ); }
+template<class Archive> void serialize( Archive & archive, ci::quat &q ) { archive( cereal::make_nvp( "x", q.x ), cereal::make_nvp( "y", q.y ), cereal::make_nvp( "z", q.z ), cereal::make_nvp( "w", q.w ) ); }
+template<class Archive> void serialize( Archive & archive, ci::dquat &q ) { archive( cereal::make_nvp( "x", q.x ), cereal::make_nvp( "y", q.y ), cereal::make_nvp( "z", q.z ), cereal::make_nvp( "w", q.w ) ); }
 #else
 template<class Archive> void serialize( Archive & archive, ci::quat &q ) { archive( q.x, q.y, q.z, q.w ); }
 template<class Archive> void serialize( Archive & archive, ci::dquat &q ) { archive( q.x, q.y, q.z, q.w ); }
